@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c5929079-10a3-49ec-83d1-a9e12360878b",
+		"_postman_id": "7f69b294-34ac-4911-b203-9ece26cfaecb",
 		"name": "Assignment-Api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42916944"
@@ -155,12 +155,12 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "fridge",
+									"value": "cooler",
 									"type": "text"
 								},
 								{
 									"key": "price",
-									"value": "70000",
+									"value": "40000",
 									"type": "text"
 								},
 								{
@@ -198,7 +198,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/products/69",
+							"raw": "http://127.0.0.1:8000/api/products/67",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -210,7 +210,7 @@
 							"path": [
 								"api",
 								"products",
-								"69"
+								"67"
 							]
 						}
 					},
@@ -239,11 +239,79 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Updated data for product table",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"dinner set\",\r\n    \"price\": 40000,\r\n    \"remove_images\": [15],\r\n    \"images\": []\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products/62",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"62"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive data from All",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/orders/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"10"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
-			"name": "Payment_Gatway",
+			"name": "Orders(Payment_Gatway)",
 			"item": [
 				{
 					"name": "payment Gatwaye(Stripe dashboard)",
@@ -278,6 +346,131 @@
 							"path": [
 								"api",
 								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive data from Order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/orders/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive data from Id ",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/orders/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Added data from Order ",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "total_amount",
+									"value": "40000",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "pending",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/orders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updated Data From Order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"total_amount\": 4500,\r\n    \"status\": \"pending\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/orders/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"orders",
+								"2"
 							]
 						}
 					},
